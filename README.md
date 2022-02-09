@@ -51,8 +51,30 @@ docker run -d --rm \
 couchbase
 ```
 ```bash
-docker run -d --rm --name db -p 8091-8094:8091-8094 -p 11210:11210 amd64/couchbase:community
+docker run -d --rm --name db-7 -p 8091-8094:8091-8094 -p 11210:11210 couchbase:community
+docker run -d --rm --name db-4 -p 8191-8194:8091-8094 -p 12210:11210 couchbase:community-4.0.0
+
 curl -X POST -u Administrator:qwerty \
 http://localhost:8091/sampleBuckets/install \
 -d '["travel-sample", "beer-sample"]'
+```
+```bash
+docker exec -it db-4 bash
+cbbackup couchbase://localhost:8091 /backups -m full --single-node
+mkdir -p /backups
+
+cbbackup http://localhost:8091 -u Administrator -p qwerty /backups/beer-sample -b beer-sample
+cbbackup http://localhost:8091 -u Administrator -p qwerty /backups/gamesim-sample -b gamesim-sample
+cbbackup http://localhost:8091 -u Administrator -p qwerty /backups/travel-sample -b travel-sample
+tar -cvf db-backups.tar /backups
+
+docker cp db-4:db-backups.tar .
+docker cp db-backups.tar db:/
+
+# Please first create the destination / bucket before restoring.
+docker exec -it db bash
+tar xvf db-backups.tar
+cbrestore /backups/beer-sample couchbase://localhost:8091 -u Administrator -p qwerty --bucket-source=beer-sample
+cbrestore /backups/gamesim-sample couchbase://localhost:8091 -u Administrator -p qwerty --bucket-source=gamesim-sample
+cbrestore /backups/travel-sample couchbase://localhost:8091 -u Administrator -p qwerty --bucket-source=travel-sample
 ```
