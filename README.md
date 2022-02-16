@@ -1,4 +1,7 @@
 # Couchbase
+![status](https://github.com/adimicoli-verisk/github-action-demo/actions/workflows/test_0.yml/badge.svg)
+![status](https://github.com/adimicoli-verisk/github-action-demo/actions/workflows/test_1.yml/badge.svg)
+
 ### How to increase memory size that is available for a Docker container
 ```text
 Docker menu whale menu > Preferences
