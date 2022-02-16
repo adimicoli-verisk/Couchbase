@@ -34,8 +34,7 @@ jobs:
 
   log:
     runs-on: ubuntu-latest
-    if: always()
-    needs: test
+    needs: [ build, test ]
     steps:
       - uses: actions/checkout@v2
 #      - uses: actions/cache@v1
