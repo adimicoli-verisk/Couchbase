@@ -3,6 +3,15 @@
 
 ![status](https://github.com/adimicoli-verisk/Couchbase/actions/workflows/test_1.yml/badge.svg)
 
+### GitHub Actions
+https://lo-victoria.com/github-actions-101-creating-your-first-workflow
+
+https://lo-victoria.com/github-actions-101-deep-dive-into-workflow-attributes
+
+https://lo-victoria.com/github-actions-101-actions-actions-actions
+
+https://lo-victoria.com/github-actions-101-develop-a-cicd-workflow
+
 ### How to increase memory size that is available for a Docker container
 ```text
 Docker menu whale menu > Preferences
