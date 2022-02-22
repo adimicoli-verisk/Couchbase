@@ -1,7 +1,9 @@
 # Couchbase
-![status](https://github.com/adimicoli-verisk/Couchbase/actions/workflows/test_0.yml/badge.svg)
 
-![status](https://github.com/adimicoli-verisk/Couchbase/actions/workflows/test_1.yml/badge.svg)
+| Github Action Status                                                                            | 
+|-------------------------------------------------------------------------------------------------|
+| ![status](https://github.com/adimicoli-verisk/Couchbase/actions/workflows/test_0.yml/badge.svg) |
+| ![status](https://github.com/adimicoli-verisk/Couchbase/actions/workflows/test_1.yml/badge.svg) |
 
 ### GitHub Actions
 https://lo-victoria.com/github-actions-101-creating-your-first-workflow
